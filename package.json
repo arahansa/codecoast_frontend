@@ -1,0 +1,32 @@
+{
+  "name": "cocotv_front",
+  "version": "1.0.0",
+  "description": "front end files for codecoast Tv site",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.6",
+    "browser-sync": "^2.12.7",
+    "gulp": "^3.9.1",
+    "jquery": "^2.2.3",
+    "sass": "^0.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arahansa/codecoast_frontend.git"
+  },
+  "keywords": [
+    "codecoast"
+  ],
+  "author": "arahansa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arahansa/codecoast_frontend/issues"
+  },
+  "homepage": "https://github.com/arahansa/codecoast_frontend#readme"
+}
