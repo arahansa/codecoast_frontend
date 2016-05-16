@@ -1,10 +1,155 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+
 	<title>cocoTV front</title>
-</head>
+	<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.glyphicon:empty {
+			width: 1em;
+		}
+		#wrapper {
+			padding-left: 70px;
+			transition: all .4s ease 0s;
+			height: 100%
+		}
+		#wrapper.active {
+			padding-left: 150px;
+		}
+		#wrapper.active  nav#leftNav {
+			left: 150px;
+		}
+		nav#leftNav {
+			margin-left: -150px;
+			left: 70px;
+			width: 150px;
+			background: #222;
+			position: fixed;
+			height: 100%;
+			z-index: 10000;
+			transition: all .4s ease 0s;
+		}
+		nav#leftNav ul.sidebar-nav {
+			display: block;
+			float: left;
+			width: 150px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+
+
+		nav#leftNav #sidebar_menu li a, ul.sidebar-nav li a {
+			color: #999;
+			display: block;
+			float: left;
+			text-decoration: none;
+			width: 150px;
+			background: #252525;
+			border-top: 1px solid #373737;
+			border-bottom: 1px solid #1A1A1A;
+			-webkit-transition: background .5s;
+			-moz-transition: background .5s;
+			-o-transition: background .5s;
+			-ms-transition: background .5s;
+			transition: background .5s;
+		}
+
+		nav#leftNav ul.sidebar-nav li {
+			line-height: 40px;
+			text-indent: 20px;
+		}
+
+		nav#leftNav ul.sidebar-nav a{
+			color: #999999;
+			display: block;
+			text-decoration: none;
+		}
+
+		nav#leftNav ul.sidebar-nav li a:hover{
+			color: #fff;
+			background: rgba(255,255,255,0.2);
+			text-decoration: none;
+		}
+
+		nav#leftNav ul.sidebar-nav li a:active,
+		nav#leftNav ul.sidebar-nav li a:focus {
+			text-decoration: none;
+		}
+
+		nav#leftNav ul.sidebar-nav > .sidebar-brand {
+			height: 65px;
+			line-height: 60px;
+			font-size: 18px;
+		}
+
+		nav#leftNav ul.sidebar-nav > .sidebar-brand a {
+			color: #999999;
+		}
+
+		nav#leftNav ul.sidebar-nav > .sidebar-brand a:hover {
+			color: #fff;
+			background: none;
+		}
+
+		nav#leftNav ul.sidebar-nav #main_icon
+		{
+			float:right;
+			padding-right: 65px;
+			padding-top:20px;
+		}
+		.sub_icon
+		{
+			float:right;
+			padding-right: 65px;
+			padding-top:10px;
+		}
+
+
+
+		section{
+			padding-left: 0;
+			margin-left: 0;
+			width: 100%;
+			height: auto;
+		}
+
+
+	</style>
 <body>
-hello world
-<script></script>
+
+
+<div id="wrapper" class="active">
+	<nav id="leftNav">
+		<ul id="sidebar_menu" class="sidebar-nav">
+			<li class="sidebar-brand">
+				<a id="menu-toggle" href="#">Home<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+		</ul>
+		<ul class="sidebar-nav" id="sidebar">
+			<li><a>BJ소개<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+			<li><a>방송들<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+			<li><a>방송일정<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+		</ul>
+	</nav>
+	<section>
+		<article>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="well lead">장난으로 만드는 Code Coast 프론트엔드 (<a href="http://animeshmanglik.name">arahansa.com</a>)</p>
+					<p class="well lead">아 간만에 프론트 하려니까 빡시네 ㅠ </p>
+				</div>
+			</div>
+		</article>
+	</section>
+
+</div>
+
+
+
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
