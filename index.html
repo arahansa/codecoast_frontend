@@ -19,7 +19,10 @@
 	
 	.sidebar {
 		position: fixed;
-		top: 0; left: 0; bottom: 0;	
+		top: 0; left: 0; bottom: 0;
+		background-color: white;
+		z-index: 99999;
+
 	}
 	.content {
 		background-color:blue;
@@ -32,6 +35,17 @@
 	}
 
 	@media (max-width: 767px) {
+		 @keyframes sidebarSlideInLeft {
+        	from { left: -220px; }
+        	to { left: 0; }
+    	}
+		.page-sidebar-toggled .sidebar {
+		    left: 0;
+		    animation: sidebarSlideInLeft .2s;
+		    -webkit-animation: sidebarSlideInLeft .2s;
+		}
+
+
 		.sidebar{position: absolute;left: -220px;}
 		.content { margin-left: 0px;}
 	}
@@ -115,6 +129,26 @@
 			$("#content").append("<br><br>hello");
 		}
 		handleSlimScroll();
+		var sidebarProgress = false;
+		$('[data-click=sidebar-toggled]').click(function(e) {
+	        e.stopPropagation();
+	        var sidebarClass = 'page-sidebar-toggled';
+	        var targetContainer = '#page-container';
+
+	        if ($(targetContainer).hasClass(sidebarClass)) {
+	            alert("타겟 클래스가 사이드바클래스를 가지고 있다");
+	            $(targetContainer).removeClass(sidebarClass);
+	        } else if (sidebarProgress !== true) {
+	            alert("타겟 클래스가 사이드바클래스를 가지고 있지 않은데 프로그레스가 트루가 아니다");
+	            $(targetContainer).addClass(sidebarClass);
+	        } else {
+	            alert("타겟 클래스가 사이드바클래스를 가지고 있지 않은데 프로그레스가 트루인데 폴스로 하자");
+	            sidebarProgress = false;
+	        }
+	        if ($(window).width() < 480) {
+	            $('#page-container').removeClass('page-right-sidebar-toggled');
+	        }
+    	});
 	});
 	var handleSlimScroll = function() {
     "use strict";
